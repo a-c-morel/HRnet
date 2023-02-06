@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { PaginatedReactTable } from 'paginated-react-table'
+import EmployeeCreation from './EmployeeCreation'
+import { tableTitleDefault, headersArrayDefault, dataArrayDefault } from './mockData'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <EmployeeCreation />
+      <PaginatedReactTable tableTitle={tableTitleDefault} headersArray={headersArrayDefault} dataArray={dataArrayDefault} />
+    </>
+  )
 }
 
-export default App;
+export default App
