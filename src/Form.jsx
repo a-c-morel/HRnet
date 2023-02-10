@@ -6,6 +6,7 @@ import StartDatePicker from "./StartDatePicker"
 function Form({ onSubmit }) {
 
     const [dateOfBirth, setDateOfBirth] = useState(new Date())
+    const [startDate, setStartDate] = useState(new Date())
     const [newEmployee, setNewEmployee] = useState({
         firstName: '',
         lastName: '',
@@ -24,13 +25,20 @@ function Form({ onSubmit }) {
             [event.target.id]: event.target.value
         })
     }
-    const handleDateChange = (value) => {
-        setDateOfBirth(value);
+    const handleDateOfBirthChange = (value) => {
+        setDateOfBirth(value)
         setNewEmployee({
         ...newEmployee,
         dateOfBirth: format(value, "MM-dd-yyyy")
         })
     }
+    const handleStartDateChange = (value) => {
+        setStartDate(value)
+        setNewEmployee({
+        ...newEmployee,
+        startDate: format(value, "MM-dd-yyyy")
+        })
+    } 
     const handleFormSubmit = (event) => {
         event.preventDefault()
         onSubmit(newEmployee)
@@ -47,8 +55,8 @@ function Form({ onSubmit }) {
                     Last Name
                 </label>
                 <input type='text' id="lastName" onChange={handleInputChange} />
-                <DOBDatePicker onDateChange={handleDateChange} value={dateOfBirth} />
-                <StartDatePicker />
+                <DOBDatePicker onDateChange={handleDateOfBirthChange} value={dateOfBirth} />
+                <StartDatePicker onDateChange={handleStartDateChange} value={startDate} />
             </section>
             <fieldset className="employee-creation__address">
                 <legend>

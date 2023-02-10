@@ -1,15 +1,17 @@
 import DatePicker from 'react-date-picker'
-import { useState } from 'react'
 
-function StartDatePicker() {
-  const [value, onChange] = useState(new Date())
+function StartDatePicker({ onDateChange, value }) {
   
+  const handleChange = (value) => {
+    onDateChange(value);
+  }
+
   return (
     <>
         <label htmlFor="start-date">
             Start Date
         </label>
-        <DatePicker onChange={onChange} value={value} format='MM-dd-y' name='Start Date'/>
+        <DatePicker onChange={handleChange} value={value} format='MM-dd-y' name='Start Date'/>
     </>
           
   )
