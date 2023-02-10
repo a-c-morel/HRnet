@@ -1,13 +1,17 @@
 import Header from './Header'
 import Form from './Form'
 
-function EmployeeCreation() {
+function EmployeeCreation({ onEmployeeCreation }) {
+
+  const handleSubmit = (newEmployee) => {
+    onEmployeeCreation(newEmployee)
+  }
 
   return (
     <div className='employee-creation'>
       <Header />
       <main>
-        <Form />
+        <Form onSubmit={handleSubmit}/>
       </main>
     </div>
   )

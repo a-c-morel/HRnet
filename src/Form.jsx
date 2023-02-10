@@ -1,36 +1,53 @@
+import format from "date-fns/format"
 import { useState } from "react"
 import DOBDatePicker from "./DOBDatePicker"
 import StartDatePicker from "./StartDatePicker"
-import { dataArrayDefault } from './mockData'
 
-function Form() {
+function Form({ onSubmit }) {
 
-  const [dataArray, setDataArray] = useState(dataArrayDefault)
-
-  const [employee, setEmployee] = useState({
-    firstName: '',
-    lastName: '',
-    dateOfBirth: '',
-    startDate: '',
-    street: '',
-    city: '',
-    countryState: '',
-    department: ''
-  })
+    const [dateOfBirth, setDateOfBirth] = useState(new Date())
+    const [newEmployee, setNewEmployee] = useState({
+        firstName: '',
+        lastName: '',
+        startDate: '',
+        department: '',
+        dateOfBirth: '',
+        street: '',
+        city: '',
+        state: '',
+        zipCode: ''
+    })
+    
+    const handleInputChange = (event) => {
+        setNewEmployee({
+            ...newEmployee,
+            [event.target.id]: event.target.value
+        })
+    }
+    const handleDateChange = (value) => {
+        setDateOfBirth(value);
+        setNewEmployee({
+        ...newEmployee,
+        dateOfBirth: format(value, "MM-dd-yyyy")
+        })
+    }
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
+        onSubmit(newEmployee)
+    }
 
   return (
-    <>
-        <form>
+        <form onSubmit={handleFormSubmit}>
             <section className="employee-creation__identity">
-                <label htmlFor="first-name">
+                <label htmlFor="firstName">
                     First Name
                 </label>
-                <input type='text' id="first-name" />
-                <label htmlFor="last-name">
+                <input type='text' id="firstName" onChange={handleInputChange} />
+                <label htmlFor="lastName">
                     Last Name
                 </label>
-                <input type='text' id="last-name" />
-                <DOBDatePicker />
+                <input type='text' id="lastName" onChange={handleInputChange} />
+                <DOBDatePicker onDateChange={handleDateChange} value={dateOfBirth} />
                 <StartDatePicker />
             </section>
             <fieldset className="employee-creation__address">
@@ -40,15 +57,15 @@ function Form() {
                 <label htmlFor='street'>
                     Street
                 </label>
-                <input type='text' id='street'/>
+                <input type='text' id='street'onChange={handleInputChange} />
                 <label htmlFor='city'>
                     City
                 </label>
-                <input type='text' id='city' />
+                <input type='text' id='city' onChange={handleInputChange} />
                 <label htmlFor="state">
                     State
                 </label>
-                <select id="state">
+                <select id="state" onChange={handleInputChange} >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -60,12 +77,16 @@ function Form() {
                     <option>9</option>
                     <option>10</option>
                 </select>
+                <label htmlFor='zipCode'>
+                    Zip Code
+                </label>
+                <input type='text' id='zipCode' onChange={handleInputChange} />
             </fieldset>
             <section className="employee-creation__department">
                 <label htmlFor="department">
                     Department
                 </label>
-                <select id="department">
+                <select id="department"  onChange={handleInputChange} >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -80,7 +101,6 @@ function Form() {
             </section>
             <button type='submit'>Save</button>
         </form>
-    </>
   )
 }
 
