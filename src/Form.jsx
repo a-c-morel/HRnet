@@ -2,6 +2,7 @@ import format from "date-fns/format"
 import { useState } from "react"
 import DOBDatePicker from "./DOBDatePicker"
 import StartDatePicker from "./StartDatePicker"
+import { states } from './statesNames'
 
 function Form({ onSubmit }) {
 
@@ -11,11 +12,11 @@ function Form({ onSubmit }) {
         firstName: '',
         lastName: '',
         startDate: '',
-        department: '',
+        department: 'Sales',
         dateOfBirth: '',
         street: '',
         city: '',
-        state: '',
+        state: 'AL',
         zipCode: ''
     })
     
@@ -74,16 +75,11 @@ function Form({ onSubmit }) {
                     State
                 </label>
                 <select id="state" onChange={handleInputChange} >
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
+                {
+                  states.map((state, index) => 
+                    <option key={index} value={state.abbreviation}>{state.name}</option>
+                  )
+                }
                 </select>
                 <label htmlFor='zipCode'>
                     Zip Code
@@ -94,17 +90,12 @@ function Form({ onSubmit }) {
                 <label htmlFor="department">
                     Department
                 </label>
-                <select id="department"  onChange={handleInputChange} >
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
+                <select id="department" value={newEmployee.department} onChange={handleInputChange} >
+                    <option>Sales</option>
+                    <option>Marketing</option>
+                    <option>Engineering</option>
+                    <option>Human Resources</option>
+                    <option>Legal</option>
                 </select>
             </section>
             <button type='submit'>Save</button>

@@ -3,7 +3,7 @@ import DatePicker from 'react-date-picker'
 function StartDatePicker({ onDateChange, value }) {
   
   const handleChange = (value) => {
-    onDateChange(value);
+    onDateChange(value)
   }
 
   return (
