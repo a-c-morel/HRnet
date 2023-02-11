@@ -1,8 +1,7 @@
 import format from "date-fns/format"
 import { useState } from "react"
-import DOBDatePicker from "./DOBDatePicker"
-import StartDatePicker from "./StartDatePicker"
 import { states } from './statesNames'
+import DatePicker from 'react-date-picker'
 
 function Form({ onSubmit }) {
 
@@ -45,7 +44,7 @@ function Form({ onSubmit }) {
         onSubmit(newEmployee)
     }
 
-  return (
+    return (
         <form onSubmit={handleFormSubmit}>
             <section className="employee-creation__identity">
                 <label htmlFor="firstName">
@@ -56,8 +55,14 @@ function Form({ onSubmit }) {
                     Last Name
                 </label>
                 <input type='text' id="lastName" onChange={handleInputChange} />
-                <DOBDatePicker onDateChange={handleDateOfBirthChange} value={dateOfBirth} />
-                <StartDatePicker onDateChange={handleStartDateChange} value={startDate} />
+                <label htmlFor="date-of-birth">
+                    Date of Birth
+                </label>
+                <DatePicker onChange={handleDateOfBirthChange} value={dateOfBirth} format='MM-dd-y' name='Date of Birth'/>
+                <label htmlFor="start-date">
+                    Start Date
+                </label>
+                <DatePicker onChange={handleStartDateChange} value={startDate} format='MM-dd-y' name='Start Date'/>
             </section>
             <fieldset className="employee-creation__address">
                 <legend>
@@ -100,7 +105,7 @@ function Form({ onSubmit }) {
             </section>
             <button type='submit'>Save</button>
         </form>
-  )
+    )
 }
 
 export default Form
