@@ -2,9 +2,20 @@ import format from "date-fns/format"
 import { useState } from "react"
 import { states } from './statesNames'
 import DatePicker from 'react-date-picker'
+import PureModal from 'react-pure-modal'
+import 'react-pure-modal/dist/react-pure-modal.min.css'
+import Select from 'react-select'
 
 function Form({ onSubmit }) {
 
+    const options = [
+        { value: 'Sales', label: 'Sales' },
+        { value: 'Marketing', label: 'Marketing' },
+        { value: 'Engineering', label: 'Engineering' },
+        { value: 'Human Resources', label: 'Human Resources' },
+        { value: 'Legal', label: 'Legal' }
+      ]
+      
     const [dateOfBirth, setDateOfBirth] = useState(new Date())
     const [startDate, setStartDate] = useState(new Date())
     const [newEmployee, setNewEmployee] = useState({
@@ -18,6 +29,8 @@ function Form({ onSubmit }) {
         state: 'AL',
         zipCode: ''
     })
+    const [modal, setModal] = useState(false)
+    const [selectedDepartment, setSelectedDepartment] = useState(newEmployee.department)
     
     const handleInputChange = (event) => {
         setNewEmployee({
@@ -38,13 +51,32 @@ function Form({ onSubmit }) {
         ...newEmployee,
         startDate: format(value, "MM-dd-yyyy")
         })
-    } 
+    }
+    const handleSelectDepartmentChange = (selectedOption) => {
+        const selectedValue = selectedOption.value
+        setNewEmployee({
+            ...newEmployee,
+            department: selectedValue
+        })
+    }
     const handleFormSubmit = (event) => {
         event.preventDefault()
         onSubmit(newEmployee)
     }
 
     return (
+        <>
+        <PureModal
+            isOpen={modal}
+            closeButton="X"
+            closeButtonPosition="bottom"
+            onClose={() => {
+                setModal(false);
+                return true;
+            }}
+        >
+            <p>Employee Created !</p>
+        </PureModal>
         <form onSubmit={handleFormSubmit}>
             <section className="employee-creation__identity">
                 <label htmlFor="firstName">
@@ -95,16 +127,23 @@ function Form({ onSubmit }) {
                 <label htmlFor="department">
                     Department
                 </label>
-                <select id="department" value={newEmployee.department} onChange={handleInputChange} >
-                    <option>Sales</option>
-                    <option>Marketing</option>
-                    <option>Engineering</option>
-                    <option>Human Resources</option>
-                    <option>Legal</option>
-                </select>
+                <Select
+                    className="basic-single"
+                    classNamePrefix="select"
+                    defaultValue={options[0]}
+                    isDisabled={false}
+                    isLoading={false}
+                    isClearable={false}
+                    isRtl={false}
+                    isSearchable={true}
+                    name="department"
+                    options={options}
+                    onChange={handleSelectDepartmentChange}
+                />
             </section>
-            <button type='submit'>Save</button>
+            <button type='submit' className="button" onClick={() => setModal(true)}>Save</button>
         </form>
+        </>
     )
 }
 
