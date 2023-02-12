@@ -1,6 +1,6 @@
 import { PaginatedReactTable } from 'paginated-react-table'
-import EmployeeCreation from './EmployeeCreation'
-import { tableTitleDefault, headersArrayDefault, dataArrayDefault } from './mockData'
+import EmployeeCreation from './components/EmployeeCreation'
+import { tableTitleDefault, headersArrayDefault, dataArrayDefault } from './utils/mockData'
 import { useEffect, useState } from "react"
 
 function App() {
