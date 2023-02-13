@@ -1,4 +1,3 @@
-import Header from './Header'
 import Form from './Form'
 
 function EmployeeCreation({ onEmployeeCreation }) {
@@ -8,12 +7,12 @@ function EmployeeCreation({ onEmployeeCreation }) {
   }
 
   return (
-    <div className='employee-creation'>
-      <Header />
-      <main>
+      <main className='create-employee'>
+        <h2>
+          Create Employee
+        </h2>
         <Form onSubmit={handleSubmit}/>
       </main>
-    </div>
   )
 }
 

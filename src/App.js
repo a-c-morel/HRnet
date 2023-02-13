@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom"
 import { PaginatedReactTable } from 'paginated-react-table'
 import EmployeeCreation from './components/EmployeeCreation'
 import { tableTitleDefault, headersArrayDefault, dataArrayDefault } from './utils/mockData'
@@ -24,10 +25,10 @@ function App() {
   
 
   return (
-    <>
-      <EmployeeCreation onEmployeeCreation={handleCreateEmployee}/>
-      <PaginatedReactTable tableTitle={tableTitleDefault} headersArray={headersArrayDefault} dataArray={dataArray} />
-    </>
+    <Routes>
+      <Route path="/" element={ <EmployeeCreation onEmployeeCreation={handleCreateEmployee}/> } />
+      <Route path="/employees" element={ <PaginatedReactTable tableTitle={tableTitleDefault} headersArray={headersArrayDefault} dataArray={dataArray} /> }/>
+    </Routes>
   )
 }
 

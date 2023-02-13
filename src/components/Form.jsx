@@ -10,6 +10,8 @@ function Form({ onSubmit }) {
 
     const [dateOfBirth, setDateOfBirth] = useState(new Date())
     const [startDate, setStartDate] = useState(new Date())
+    const [modal, setModal] = useState(false)
+
     const [newEmployee, setNewEmployee] = useState({
         firstName: '',
         lastName: '',
@@ -21,7 +23,6 @@ function Form({ onSubmit }) {
         state: 'AL',
         zipCode: ''
     })
-    const [modal, setModal] = useState(false)
     
     const handleInputChange = (event) => {
         setNewEmployee({
@@ -60,9 +61,6 @@ function Form({ onSubmit }) {
     const handleFormSubmit = (event) => {
         event.preventDefault()
         onSubmit(newEmployee)
-    }
-    const handleOpenModal = () => {
-        setModal(true)
     }
     const handleCloseModal = () => {
         setModal(false)
@@ -138,7 +136,7 @@ function Form({ onSubmit }) {
                     onChange={handleSelectDepartmentChange}
                 />
             </section>
-            <button type='submit' className="button" onClick={handleOpenModal}>Save</button>
+            <button type='submit' className="button" onClick={() => {setModal(true)}}>Save</button>
         </form>
         </>
     )

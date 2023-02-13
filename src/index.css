@@ -1,3 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(51,56,103);
+    background: -o-linear-gradient(left, rgba(51,56,103,1) 0%, rgba(0,0,0,1) 35%, rgba(22,25,58,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(51,56,103,1)), color-stop(35%, rgba(0,0,0,1)), to(rgba(22,25,58,1)));
+    background: linear-gradient(90deg, rgba(51,56,103,1) 0%, rgba(0,0,0,1) 35%, rgba(22,25,58,1) 100%);
+}
+
+header {
+    width: 100%;
+    padding: 1rem;
+    background-color: #333867c2;
+    color: #fff;
+}
+
+.hrnet__identity {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2rem
+}
+
+.logo {
+    width: 4rem;
+    height: auto;
+}
+
+nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    gap: 3rem
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit
+}
+
+.navbar__link {
+    text-decoration: none;
+}
+
+.navbar__link--active {
+    text-decoration: underline;
+}
+
 .employee-creation {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -14,16 +90,6 @@
             align-items: center;
 }
 
-.employee-creation__nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 3rem
-}
-
 .employee-creation__form-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -35,6 +101,14 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+}
+
+.create-employee {
+    background-color: #ffffffe9;
+    margin: 3rem;
+    width: 20rem;
+    padding: 2rem;
+    border-radius: 1rem;
 }
 
 .employee-creation__identity,
