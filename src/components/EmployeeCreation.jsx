@@ -1,17 +1,17 @@
 import Form from './Form'
+import { useContext } from 'react'
+import { DataArrayContext } from '../context/DataArrayContext'
 
-function EmployeeCreation({ onEmployeeCreation }) {
+function EmployeeCreation() {
 
-  const handleSubmit = (newEmployee) => {
-    onEmployeeCreation(newEmployee)
-  }
+  const {handleCreateEmployee} = useContext(DataArrayContext)
 
   return (
       <main className='create-employee'>
         <h2>
           Create Employee
         </h2>
-        <Form onSubmit={handleSubmit}/>
+        <Form onSubmit={handleCreateEmployee}/>
       </main>
   )
 }

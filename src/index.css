@@ -18,6 +18,8 @@ body {
 header {
     width: 100%;
     padding: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
     background-color: #333867c2;
     color: #fff;
 }
@@ -104,11 +106,21 @@ a:visited {
 }
 
 .create-employee {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: #ffffffe9;
     margin: 3rem;
-    width: 20rem;
+    width: 30rem;
     padding: 2rem;
     border-radius: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .employee-creation__identity,
@@ -120,4 +132,32 @@ a:visited {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+}
+
+fieldset {
+    border: 2px solid #181a2f5f;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+fieldset legend {
+    color: #181a2f5f;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: bold;
+}
+
+.paginated-react-table__container {
+    width: 90vw;
+}
+
+@media only screen and (max-width: 900px) {
+    .paginated-react-table__header {
+        white-space: normal
+    }
 }
