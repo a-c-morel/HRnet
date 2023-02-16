@@ -86,7 +86,7 @@ function Form({ onSubmit }) {
             isOpen={modal}
             onClose={handleCloseModal}
         />
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} className='employee-creation'>
             <section className="employee-creation__identity">
                 <label htmlFor="firstName">
                     First Name
@@ -122,7 +122,7 @@ function Form({ onSubmit }) {
                     className='states-selector'
                     styles={{container: (baseStyles) => ({
                         ...baseStyles,
-                        width: '18.5rem',
+                        width: '18.5rem'
                     })}}
                 />
                 <label htmlFor='zipCode'>
@@ -140,11 +140,12 @@ function Form({ onSubmit }) {
                     options={departments}
                     onChange={handleSelectDepartmentChange}
                     styles={{container: (baseStyles) => ({
-                        ...baseStyles
+                        ...baseStyles,
+                        width: '19rem'
                     })}}
                 />
             </section>
-            <button type='submit' className="button" onClick={() => {setModal(true)}}>Save</button>
+            <button type='submit' className="employee-creation__save-button" onClick={() => {setModal(true)}}>Save</button>
         </form>
         </>
     )

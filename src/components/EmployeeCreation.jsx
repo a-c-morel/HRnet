@@ -8,7 +8,7 @@ function EmployeeCreation() {
 
   return (
       <main className='create-employee'>
-        <h2>
+        <h2 className='create-employee__title'>
           Create Employee
         </h2>
         <Form onSubmit={handleCreateEmployee}/>

@@ -6,6 +6,8 @@ const ModalCustom = ({ isOpen, onClose }) => (
         closeButton="X"
         closeButtonPosition="bottom"
         onClose={onClose}
+        width='400px'
+        className='modal'
     >
         <p>Employee Created !</p>
     </PureModal>

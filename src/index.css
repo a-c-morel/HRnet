@@ -123,8 +123,13 @@ a:visited {
             align-items: center;
 }
 
+.create-employee__title {
+    margin-bottom: 1rem;
+}
+
 .employee-creation__identity,
-.employee-creation__address {
+.employee-creation__address,
+.employee-creation__department {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -136,6 +141,10 @@ a:visited {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
+}
+
+.employee-creation__address {
+    margin-top: 2rem;
 }
 
 fieldset {
@@ -168,6 +177,7 @@ fieldset legend {
 
 label {
     margin-top: 1rem;
+    margin-bottom: 0.3rem;
 }
 
 .css-qbdosj-Input .states-selector {
@@ -180,9 +190,32 @@ label {
     width: 18.5rem;
 }
 
+.employee-creation__save-button {
+    cursor: pointer;
+    margin-top: 2rem;
+    background-color: #92ad19b2;
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    font-weight: bold;
+    border-width:1px;
+    border-color:#00000050;
+}
+
+.employee-creation__save-button:hover {
+    background-color: #9cb91da7;
+}
+
 .paginated-react-table__container {
     width: 90vw;
     background-color: #fffffff8;
+}
+
+.pure-modal .panel-body, .pure-modal .panel-footer, .pure-modal .panel-title {
+    word-break: break-all;
+    text-align: center;
+    border-radius: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 @media only screen and (max-width: 900px) {
