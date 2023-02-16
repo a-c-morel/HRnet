@@ -91,11 +91,11 @@ function Form({ onSubmit }) {
                 <label htmlFor="firstName">
                     First Name
                 </label>
-                <input type='text' id="firstName" onChange={handleInputChange} value={newEmployee.firstName} />
+                <input className='input' type='text' id="firstName" onChange={handleInputChange} value={newEmployee.firstName} />
                 <label htmlFor="lastName">
                     Last Name
                 </label>
-                <input type='text' id="lastName" onChange={handleInputChange} value={newEmployee.lastName}/>
+                <input className='input' type='text' id="lastName" onChange={handleInputChange} value={newEmployee.lastName}/>
                 <DatePickerCustom label="Date of Birth" value={dateOfBirth} onChange={handleDateOfBirthChange} />
                 <DatePickerCustom label="Start Date" value={startDate} onChange={handleStartDateChange} />
             </section>
@@ -106,11 +106,11 @@ function Form({ onSubmit }) {
                 <label htmlFor='street'>
                     Street
                 </label>
-                <input type='text' id='street'onChange={handleInputChange} value={newEmployee.street}/>
+                <input className='input' type='text' id='street'onChange={handleInputChange} value={newEmployee.street}/>
                 <label htmlFor='city'>
                     City
                 </label>
-                <input type='text' id='city' onChange={handleInputChange} value={newEmployee.city}/>
+                <input className='input' type='text' id='city' onChange={handleInputChange} value={newEmployee.city}/>
                 <label htmlFor="state">
                     State
                 </label>
@@ -119,11 +119,16 @@ function Form({ onSubmit }) {
                     name="states"
                     options={states}
                     onChange={handleSelectStateChange}
+                    className='states-selector'
+                    styles={{container: (baseStyles) => ({
+                        ...baseStyles,
+                        width: '18.5rem',
+                    })}}
                 />
                 <label htmlFor='zipCode'>
                     Zip Code
                 </label>
-                <input type='text' id='zipCode' onChange={handleInputChange} value={newEmployee.zipCode}/>
+                <input className='input' type='text' id='zipCode' onChange={handleInputChange} value={newEmployee.zipCode}/>
             </fieldset>
             <section className="employee-creation__department">
                 <label htmlFor="department">
@@ -134,6 +139,9 @@ function Form({ onSubmit }) {
                     name="department"
                     options={departments}
                     onChange={handleSelectDepartmentChange}
+                    styles={{container: (baseStyles) => ({
+                        ...baseStyles
+                    })}}
                 />
             </section>
             <button type='submit' className="button" onClick={() => {setModal(true)}}>Save</button>

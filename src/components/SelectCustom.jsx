@@ -1,6 +1,6 @@
 import Select from "react-select"
 
-const SelectCustom = ({ defaultValue, name, options, onChange }) => (
+const SelectCustom = ({ defaultValue, name, options, onChange, styles }) => (
     <Select
         className="basic-single"
         classNamePrefix="select"
@@ -13,6 +13,7 @@ const SelectCustom = ({ defaultValue, name, options, onChange }) => (
         name={name}
         options={options}
         onChange={onChange}
+        styles={styles}
     />
 )
 
