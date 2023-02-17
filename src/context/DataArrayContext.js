@@ -7,8 +7,22 @@ const DataArrayContextProvider = props => {
 
     const [dataArray, setDataArray] = useState(dataArrayDefault)
 
+    /**
+     * Adds data to localStorage and cause dataArray to use created employees instead of mock data
+     * @param {Object} newEmployee 
+     * {
+        firstName: '',
+        lastName: '',
+        startDate: '',
+        department: 'Sales',
+        dateOfBirth: '',
+        street: '',
+        city: '',
+        state: 'AL',
+        zipCode: ''
+    }
+     */
     const handleCreateEmployee = (newEmployee) => {
-        console.log(dataArray)
         let localData = []
         if (localStorage.getItem("employeeData")) {
           localData = JSON.parse(localStorage.getItem('employeeData'))
@@ -18,6 +32,9 @@ const DataArrayContextProvider = props => {
         setDataArray(localData)
       }
     
+      /**
+       * Executed one time, when component is being mounted
+       */
       useEffect(() => {
         if (localStorage.getItem("employeeData")) {
           setDataArray(JSON.parse(localStorage.getItem("employeeData")))

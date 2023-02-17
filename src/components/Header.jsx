@@ -5,9 +5,9 @@ function Header() {
   return (
     <header>
       <nav>
-        <div className="hrnet__identity">
-          <img src={logo} alt='logo HRnet' className="logo"/>
-          <h1>
+        <div className="hrnet-identity">
+          <img src={logo} alt='logo HRnet' className="hrnet-identity__logo"/>
+          <h1 className="hrnet-identity__app-name">
           HRnet
           </h1>
         </div>

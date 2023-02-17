@@ -11,7 +11,6 @@ function Form({ onSubmit }) {
     const [dateOfBirth, setDateOfBirth] = useState(new Date())
     const [startDate, setStartDate] = useState(new Date())
     const [modal, setModal] = useState(false)
-
     const [newEmployee, setNewEmployee] = useState({
         firstName: '',
         lastName: '',
@@ -86,8 +85,8 @@ function Form({ onSubmit }) {
             isOpen={modal}
             onClose={handleCloseModal}
         />
-        <form onSubmit={handleFormSubmit} className='employee-creation'>
-            <section className="employee-creation__identity">
+        <form onSubmit={handleFormSubmit} className='create-employee-form'>
+            <section className="create-employee-form__identity">
                 <label htmlFor="firstName">
                     First Name
                 </label>
@@ -99,7 +98,7 @@ function Form({ onSubmit }) {
                 <DatePickerCustom label="Date of Birth" value={dateOfBirth} onChange={handleDateOfBirthChange} />
                 <DatePickerCustom label="Start Date" value={startDate} onChange={handleStartDateChange} />
             </section>
-            <fieldset className="employee-creation__address">
+            <fieldset className="create-employee-form__address">
                 <legend>
                     Address
                 </legend>
@@ -130,7 +129,7 @@ function Form({ onSubmit }) {
                 </label>
                 <input className='input' type='text' id='zipCode' onChange={handleInputChange} value={newEmployee.zipCode}/>
             </fieldset>
-            <section className="employee-creation__department">
+            <section className="create-employee-form__department">
                 <label htmlFor="department">
                     Department
                 </label>
@@ -145,7 +144,7 @@ function Form({ onSubmit }) {
                     })}}
                 />
             </section>
-            <button type='submit' className="employee-creation__save-button" onClick={() => {setModal(true)}}>Save</button>
+            <button type='submit' className="create-employee-form__save-button" onClick={() => {setModal(true)}}>Save</button>
         </form>
         </>
     )
