@@ -14,6 +14,14 @@ const SelectCustom = ({ defaultValue, name, options, onChange, styles }) => (
         options={options}
         onChange={onChange}
         styles={styles}
+        theme={(theme) => ({
+            ...theme,
+            colors: {
+              ...theme.colors,
+              primary25: 'gainsBoro',
+              primary: 'black',
+            },
+          })}
     />
 )
 

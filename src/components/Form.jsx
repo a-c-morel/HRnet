@@ -121,7 +121,7 @@ function Form({ onSubmit }) {
                     className='states-selector'
                     styles={{container: (baseStyles) => ({
                         ...baseStyles,
-                        width: '18.5rem'
+                        width: '18.7rem'
                     })}}
                 />
                 <label htmlFor='zipCode'>

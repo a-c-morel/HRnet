@@ -159,6 +159,13 @@ fieldset legend {
     border-color: #0000004b;
     border-radius: 4px;
     margin-bottom: 1rem;
+    padding-right: .7rem;
+    padding-left: .7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: .99rem;
+    height: 2.4rem;
+    font-family: 'Roboto', sans-serif;
 }
 label {
     margin-top: 1rem;
