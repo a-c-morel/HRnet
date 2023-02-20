@@ -1,11 +1,12 @@
 import { useState } from "react"
 import PropTypes from 'prop-types'
 import format from "date-fns/format"
+
 import { states, departments } from '../utils/selectOptions'
-import 'react-pure-modal/dist/react-pure-modal.min.css'
 import DatePickerCustom from "./DatePickerCustom"
 import SelectCustom from "./SelectCustom"
 import ModalCustom from "./ModalCustom"
+import 'react-pure-modal/dist/react-pure-modal.min.css'
 
 function Form({ onSubmit }) {
 

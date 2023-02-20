@@ -1,6 +1,7 @@
-import { PaginatedReactTable } from 'paginated-react-table'
 import { useContext, useEffect } from 'react'
+
 import { DataArrayContext } from '../context/DataArrayContext'
+import { PaginatedReactTable } from 'paginated-react-table'
 
 function EmployeesTable() {
     

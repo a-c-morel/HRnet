@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom"
-import EmployeeCreation from './components/EmployeeCreation'
+
 import DataArrayContextProvider from "./context/DataArrayContext"
+import EmployeeCreation from './components/EmployeeCreation'
 import EmployeesTable from "./components/EmployeesTable"
 
 function App() {
