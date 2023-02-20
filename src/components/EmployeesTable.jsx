@@ -1,10 +1,22 @@
 import { PaginatedReactTable } from 'paginated-react-table'
 import { useContext, useEffect } from 'react'
 import { DataArrayContext } from '../context/DataArrayContext'
-import { headersArrayDefault, tableTitleDefault } from '../utils/mockData'
 
 function EmployeesTable() {
+    
     const {dataArray} = useContext(DataArrayContext)
+    const tableTitle = "Current Employees"
+    const headersArray = [
+        "First Name",
+        "Last Name",
+        "Start Date",
+        "Department",
+        "Date of Birth",
+        "Street",
+        "City",
+        "State",
+        "Zip Code"
+    ]
 
     useEffect(() => {
         document.title = 'HRnet - Employees'
@@ -12,7 +24,7 @@ function EmployeesTable() {
 
     return (
         <div className='employees-table__container'>
-            <PaginatedReactTable tableTitle={tableTitleDefault} headersArray={headersArrayDefault} dataArray={dataArray} />
+            <PaginatedReactTable tableTitle={tableTitle} headersArray={headersArray} dataArray={dataArray} />
         </div>
     )
 }
