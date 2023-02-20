@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Select from "react-select"
 
 const SelectCustom = ({ defaultValue, name, options, onChange, styles }) => (
@@ -26,3 +27,13 @@ const SelectCustom = ({ defaultValue, name, options, onChange, styles }) => (
 )
 
 export default SelectCustom
+
+SelectCustom.propTypes = {
+  defaultValue: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onChange: PropTypes.func.isRequired,
+  styles: PropTypes.shape({
+    container: PropTypes.func,
+  })
+}

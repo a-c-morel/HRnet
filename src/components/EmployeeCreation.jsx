@@ -1,7 +1,6 @@
+import { useContext, useEffect } from 'react'
 import Form from './Form'
-import { useContext } from 'react'
 import { DataArrayContext } from '../context/DataArrayContext'
-import { useEffect } from 'react'
 
 function EmployeeCreation() {
 

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import PureModal from 'react-pure-modal'
 
 const ModalCustom = ({ isOpen, onClose }) => (
@@ -14,3 +15,8 @@ const ModalCustom = ({ isOpen, onClose }) => (
 )
 
 export default ModalCustom
+
+ModalCustom.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired
+}

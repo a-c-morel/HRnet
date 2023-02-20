@@ -1,5 +1,6 @@
-import format from "date-fns/format"
 import { useState } from "react"
+import PropTypes from 'prop-types'
+import format from "date-fns/format"
 import { states, departments } from '../utils/selectOptions'
 import 'react-pure-modal/dist/react-pure-modal.min.css'
 import DatePickerCustom from "./DatePickerCustom"
@@ -198,3 +199,7 @@ function Form({ onSubmit }) {
 }
 
 export default Form
+
+Form.propTypes = {
+    onSubmit: PropTypes.func.isRequired
+}
