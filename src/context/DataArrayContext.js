@@ -1,11 +1,10 @@
-import React, { createContext, useState, useEffect } from 'react'
-import { dataArrayDefault } from '../utils/mockData'
+import { createContext, useState, useEffect } from 'react'
 
 export const DataArrayContext = createContext()
 
 const DataArrayContextProvider = props => {
 
-    const [dataArray, setDataArray] = useState(dataArrayDefault)
+    const [dataArray, setDataArray] = useState(JSON.parse(localStorage.getItem("employeeData")))
 
     /**
      * Adds data to localStorage and cause dataArray to use created employees instead of mock data
@@ -43,7 +42,7 @@ const DataArrayContextProvider = props => {
 
     return (
         <DataArrayContext.Provider value={{handleCreateEmployee, dataArray}}>
-             {props.children}
+            {props.children}
         </DataArrayContext.Provider>
     )
 }

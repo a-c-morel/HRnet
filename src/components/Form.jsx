@@ -81,71 +81,118 @@ function Form({ onSubmit }) {
 
     return (
         <>
-        <ModalCustom
-            isOpen={modal}
-            onClose={handleCloseModal}
-        />
-        <form onSubmit={handleFormSubmit} className='create-employee-form'>
-            <section className="create-employee-form__identity">
-                <label htmlFor="firstName">
-                    First Name
-                </label>
-                <input className='input' type='text' id="firstName" onChange={handleInputChange} value={newEmployee.firstName} />
-                <label htmlFor="lastName">
-                    Last Name
-                </label>
-                <input className='input' type='text' id="lastName" onChange={handleInputChange} value={newEmployee.lastName}/>
-                <DatePickerCustom label="Date of Birth" value={dateOfBirth} onChange={handleDateOfBirthChange} />
-                <DatePickerCustom label="Start Date" value={startDate} onChange={handleStartDateChange} />
-            </section>
-            <fieldset className="create-employee-form__address">
-                <legend>
-                    Address
-                </legend>
-                <label htmlFor='street'>
-                    Street
-                </label>
-                <input className='input' type='text' id='street'onChange={handleInputChange} value={newEmployee.street}/>
-                <label htmlFor='city'>
-                    City
-                </label>
-                <input className='input' type='text' id='city' onChange={handleInputChange} value={newEmployee.city}/>
-                <label htmlFor="state">
-                    State
-                </label>
-                <SelectCustom
-                    defaultValue={states[0]}
-                    name="states"
-                    options={states}
-                    onChange={handleSelectStateChange}
-                    className='states-selector'
-                    styles={{container: (baseStyles) => ({
-                        ...baseStyles,
-                        width: '18.7rem'
-                    })}}
-                />
-                <label htmlFor='zipCode'>
-                    Zip Code
-                </label>
-                <input className='input' type='text' id='zipCode' onChange={handleInputChange} value={newEmployee.zipCode}/>
-            </fieldset>
-            <section className="create-employee-form__department">
-                <label htmlFor="department">
-                    Department
-                </label>
-                <SelectCustom
-                    defaultValue={departments[0]}
-                    name="department"
-                    options={departments}
-                    onChange={handleSelectDepartmentChange}
-                    styles={{container: (baseStyles) => ({
-                        ...baseStyles,
-                        width: '19rem'
-                    })}}
-                />
-            </section>
-            <button type='submit' className="create-employee-form__save-button" onClick={() => {setModal(true)}}>Save</button>
-        </form>
+            <ModalCustom
+                isOpen={modal}
+                onClose={handleCloseModal}
+            />
+            <form
+                onSubmit={handleFormSubmit} 
+                className='create-employee-form'
+            >
+                <section className="create-employee-form__identity">
+                    <label htmlFor="firstName">
+                        First Name
+                    </label>
+                    <input
+                        className='input'
+                        type='text'
+                        id="firstName"
+                        onChange={handleInputChange}
+                        value={newEmployee.firstName}
+                    />
+                    <label htmlFor="lastName">
+                        Last Name
+                    </label>
+                    <input
+                        className='input'
+                        type='text'
+                        id="lastName"
+                        onChange={handleInputChange}
+                        value={newEmployee.lastName}
+                    />
+                    <DatePickerCustom
+                        label="Date of Birth"
+                        value={dateOfBirth}
+                        onChange={handleDateOfBirthChange}
+                    />
+                    <DatePickerCustom
+                        label="Start Date"
+                        value={startDate}
+                        onChange={handleStartDateChange}
+                    />
+                </section>
+                <fieldset className="create-employee-form__address">
+                    <legend>
+                        Address
+                    </legend>
+                    <label htmlFor='street'>
+                        Street
+                    </label>
+                    <input
+                        className='input'
+                        type='text'
+                        id='street'
+                        onChange={handleInputChange}
+                        value={newEmployee.street}
+                    />
+                    <label htmlFor='city'>
+                        City
+                    </label>
+                    <input
+                        className='input'
+                        type='text'
+                        id='city'
+                        onChange={handleInputChange}
+                        value={newEmployee.city}
+                    />
+                    <label htmlFor="state">
+                        State
+                    </label>
+                    <SelectCustom
+                        defaultValue={states[0]}
+                        name="states"
+                        options={states}
+                        onChange={handleSelectStateChange}
+                        className='states-selector'
+                        styles={{container: (baseStyles) => ({
+                            ...baseStyles,
+                            width: '18.7rem'
+                        })}}
+                    />
+                    <label htmlFor='zipCode'>
+                        Zip Code
+                    </label>
+                    <input
+                        className='input'
+                        type='text'
+                        id='zipCode'
+                        onChange={handleInputChange}
+                        value={newEmployee.zipCode}
+                    />
+                </fieldset>
+                <section className="create-employee-form__department">
+                    <label htmlFor="department">
+                        Department
+                    </label>
+                    <SelectCustom
+                        defaultValue={departments[0]}
+                        name="department"
+                        options={departments}
+                        onChange={handleSelectDepartmentChange}
+                        styles={{container: (baseStyles) => ({
+                            ...baseStyles,
+                            width: '19rem'
+                        })}}
+                    />
+                </section>
+                <button
+                    type='submit'
+                    className="create-employee-form__save-button"
+                    onClick={() => {setModal(true)}}
+                >
+                    Save
+                </button>
+            </form>
         </>
     )
 }

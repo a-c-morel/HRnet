@@ -1,6 +1,5 @@
 import { PaginatedReactTable } from 'paginated-react-table'
-import React, { useContext } from 'react'
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { DataArrayContext } from '../context/DataArrayContext'
 import { headersArrayDefault, tableTitleDefault } from '../utils/mockData'
 

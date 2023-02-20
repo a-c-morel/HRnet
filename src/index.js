@@ -7,13 +7,12 @@ import Header from './components/Header'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <div className='employee-creation'>
-        <Header />
-        <App />
-      </div>
-    </React.StrictMode>
+    <BrowserRouter>
+        <React.StrictMode>
+            <div className='employee-creation'>
+                <Header />
+                <App />
+            </div>
+        </React.StrictMode>
   </BrowserRouter>
-  
 )

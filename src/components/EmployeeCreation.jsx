@@ -12,14 +12,14 @@ function EmployeeCreation() {
   }, [])
 
   return (
-      <main>
-        <div className='create-employee'>
-          <h2 className='create-employee__title'>
-            Create Employee
-          </h2>
-          <Form onSubmit={handleCreateEmployee}/>
-        </div>
-      </main>
+    <main>
+      <div className='create-employee'>
+        <h2 className='create-employee__title'>
+          Create Employee
+        </h2>
+        <Form onSubmit={handleCreateEmployee}/>
+      </div>
+    </main>
   )
 }
 
