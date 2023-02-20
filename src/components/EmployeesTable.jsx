@@ -6,17 +6,17 @@ import { PaginatedReactTable } from 'paginated-react-table'
 function EmployeesTable() {
     
     const {dataArray} = useContext(DataArrayContext)
-    const tableTitle = "Current Employees"
+    const tableTitle = 'Current Employees'
     const headersArray = [
-        "First Name",
-        "Last Name",
-        "Start Date",
-        "Department",
-        "Date of Birth",
-        "Street",
-        "City",
-        "State",
-        "Zip Code"
+        'First Name',
+        'Last Name',
+        'Start Date',
+        'Department',
+        'Date of Birth',
+        'Street',
+        'City',
+        'State',
+        'Zip Code'
     ]
 
     useEffect(() => {

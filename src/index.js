@@ -7,7 +7,7 @@ import Header from './components/Header'
 import './index.css'
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <BrowserRouter>
         <React.StrictMode>

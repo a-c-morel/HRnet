@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useState } from 'react'
 import PropTypes from 'prop-types'
-import format from "date-fns/format"
+import format from 'date-fns/format'
 
 import { states, departments } from '../utils/selectOptions'
-import DatePickerCustom from "./DatePickerCustom"
-import SelectCustom from "./SelectCustom"
-import ModalCustom from "./ModalCustom"
+import DatePickerCustom from './DatePickerCustom'
+import SelectCustom from './SelectCustom'
+import ModalCustom from './ModalCustom'
 import 'react-pure-modal/dist/react-pure-modal.min.css'
 
 function Form({ onSubmit }) {
@@ -35,14 +35,14 @@ function Form({ onSubmit }) {
         setDateOfBirth(value)
         setNewEmployee({
         ...newEmployee,
-        dateOfBirth: format(value, "MM-dd-yyyy")
+        dateOfBirth: format(value, 'MM-dd-yyyy')
         })
     }
     const handleStartDateChange = (value) => {
         setStartDate(value)
         setNewEmployee({
         ...newEmployee,
-        startDate: format(value, "MM-dd-yyyy")
+        startDate: format(value, 'MM-dd-yyyy')
         })
     }
     const handleSelectDepartmentChange = (selectedOption) => {
@@ -91,39 +91,39 @@ function Form({ onSubmit }) {
                 onSubmit={handleFormSubmit} 
                 className='create-employee-form'
             >
-                <section className="create-employee-form__identity">
-                    <label htmlFor="firstName">
+                <section className='create-employee-form__identity'>
+                    <label htmlFor='firstName'>
                         First Name
                     </label>
                     <input
                         className='input'
                         type='text'
-                        id="firstName"
+                        id='firstName'
                         onChange={handleInputChange}
                         value={newEmployee.firstName}
                     />
-                    <label htmlFor="lastName">
+                    <label htmlFor='lastName'>
                         Last Name
                     </label>
                     <input
                         className='input'
                         type='text'
-                        id="lastName"
+                        id='lastName'
                         onChange={handleInputChange}
                         value={newEmployee.lastName}
                     />
                     <DatePickerCustom
-                        label="Date of Birth"
+                        label='Date of Birth'
                         value={dateOfBirth}
                         onChange={handleDateOfBirthChange}
                     />
                     <DatePickerCustom
-                        label="Start Date"
+                        label='Start Date'
                         value={startDate}
                         onChange={handleStartDateChange}
                     />
                 </section>
-                <fieldset className="create-employee-form__address">
+                <fieldset className='create-employee-form__address'>
                     <legend>
                         Address
                     </legend>
@@ -147,12 +147,12 @@ function Form({ onSubmit }) {
                         onChange={handleInputChange}
                         value={newEmployee.city}
                     />
-                    <label htmlFor="state">
+                    <label htmlFor='state'>
                         State
                     </label>
                     <SelectCustom
                         defaultValue={states[0]}
-                        name="states"
+                        name='states'
                         options={states}
                         onChange={handleSelectStateChange}
                         className='states-selector'
@@ -172,13 +172,13 @@ function Form({ onSubmit }) {
                         value={newEmployee.zipCode}
                     />
                 </fieldset>
-                <section className="create-employee-form__department">
-                    <label htmlFor="department">
+                <section className='create-employee-form__department'>
+                    <label htmlFor='department'>
                         Department
                     </label>
                     <SelectCustom
                         defaultValue={departments[0]}
-                        name="department"
+                        name='department'
                         options={departments}
                         onChange={handleSelectDepartmentChange}
                         styles={{container: (baseStyles) => ({
@@ -189,7 +189,7 @@ function Form({ onSubmit }) {
                 </section>
                 <button
                     type='submit'
-                    className="create-employee-form__save-button"
+                    className='create-employee-form__save-button'
                     onClick={() => {setModal(true)}}
                 >
                     Save

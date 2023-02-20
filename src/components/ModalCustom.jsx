@@ -4,8 +4,8 @@ import PureModal from 'react-pure-modal'
 const ModalCustom = ({ isOpen, onClose }) => (
     <PureModal
         isOpen={isOpen}
-        closeButton="X"
-        closeButtonPosition="bottom"
+        closeButton='✖'
+        closeButtonPosition='bottom'
         onClose={onClose}
         width='400px'
         className='modal'

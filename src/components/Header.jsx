@@ -1,22 +1,22 @@
-import { NavLink } from "react-router-dom"
-import logo from "../assets/logo.png"
+import { NavLink } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
 function Header() {
     return (
         <header>
             <nav>
-                <div className="hrnet-identity">
-                    <img src={logo} alt='logo HRnet' className="hrnet-identity__logo"/>
-                    <h1 className="hrnet-identity__app-name">
+                <div className='hrnet-identity'>
+                    <img src={logo} alt='logo HRnet' className='hrnet-identity__logo'/>
+                    <h1 className='hrnet-identity__app-name'>
                         HRnet
                     </h1>
                 </div>
-                <ul className="navigation">
+                <ul className='navigation'>
                     <li>
                         <NavLink 
-                            to="/employees"
+                            to='/employees'
                             className={({ isActive }) => 
-                              (isActive ? "navbar__link--active" : "navbar__link")
+                              (isActive ? 'navbar__link--active' : 'navbar__link')
                             }
                         >
                             View Current Employees
@@ -24,9 +24,9 @@ function Header() {
                     </li>
                     <li>
                         <NavLink
-                            to="/"
+                            to='/'
                             className={({ isActive }) =>
-                                (isActive ? "navbar__link--active" : "navbar__link")
+                                (isActive ? 'navbar__link--active' : 'navbar__link')
                             }
                         >
                             Create employee
