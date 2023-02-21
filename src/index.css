@@ -14,9 +14,10 @@ body {
 }
 a {
     text-decoration: none;
+    color: white
 }
 a:visited {
-    color: inherit
+    color: white
 }
 
 /*Header*/
@@ -50,7 +51,7 @@ nav {
 }
 .hrnet-identity__logo {
     width: 4rem;
-    height: auto;
+    height: 4,82rem;
 }
 .hrnet-identity__app-name {
     font-weight: bold;
