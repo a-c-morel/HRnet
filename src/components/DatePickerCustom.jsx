@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import DatePicker from 'react-date-picker'
 
-const DatePickerCustom = ({ label, value, onChange, format='MM-dd-y' }) => (
+const DatePickerCustom = ({ label, value, onChange, format='MM-dd-y', calendarAriaLabel, clearAriaLabel }) => (
     <>
         <label htmlFor={label}>{label}</label>
-        <DatePicker onChange={onChange} value={value} format={format} name={label} />
+        <DatePicker onChange={onChange} value={value} format={format} name={label} calendarAriaLabel={calendarAriaLabel} clearAriaLabel={clearAriaLabel}/>
     </>
 )
 

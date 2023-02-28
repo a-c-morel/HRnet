@@ -116,11 +116,15 @@ function Form({ onSubmit }) {
                         label='Date of Birth'
                         value={dateOfBirth}
                         onChange={handleDateOfBirthChange}
+                        calendarAriaLabel='Toggle calendar'
+                        clearAriaLabel='Clear value'
                     />
                     <DatePickerCustom
                         label='Start Date'
                         value={startDate}
                         onChange={handleStartDateChange}
+                        calendarAriaLabel='Toggle calendar'
+                        clearAriaLabel='Clear value'
                     />
                 </section>
                 <fieldset className='create-employee-form__address'>
