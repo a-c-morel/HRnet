@@ -147,7 +147,7 @@ function Form({ onSubmit }) {
                         onChange={handleInputChange}
                         value={newEmployee.city}
                     />
-                    <label htmlFor='react-select-2-input'>
+                    <label htmlFor='react-select-3-input'>
                         State
                     </label>
                     <SelectCustom
@@ -173,7 +173,7 @@ function Form({ onSubmit }) {
                     />
                 </fieldset>
                 <section className='create-employee-form__department'>
-                    <label htmlFor='react-select-3-input'>
+                    <label htmlFor='react-select-5-input'>
                         Department
                     </label>
                     <SelectCustom

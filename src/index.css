@@ -172,7 +172,7 @@ label {
 .create-employee-form__save-button {
     cursor: pointer;
     margin-top: 2rem;
-    background-color: #5f8a28;
+    background-color: #517522;
     padding: 1rem 3rem;
     border-radius: .5rem;
     font-weight: bold;
@@ -180,7 +180,7 @@ label {
     color: #fff
 }
 .create-employee-form__save-button:hover {
-    background-color: #6b9a2d;
+    background-color: #5e8727;
 }
 /*SelectCustom (react-select)*/
 .css-qbdosj-Input .states-selector {
