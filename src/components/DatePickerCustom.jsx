@@ -4,7 +4,7 @@ import DatePicker from 'react-date-picker'
 const DatePickerCustom = ({ label, value, onChange, format='MM-dd-y', calendarAriaLabel, clearAriaLabel }) => (
     <>
         <label htmlFor={label}>{label}</label>
-        <DatePicker onChange={onChange} value={value} format={format} name={label} calendarAriaLabel={calendarAriaLabel} clearAriaLabel={clearAriaLabel}/>
+        <DatePicker onChange={onChange} value={value} format={format} name={label} calendarAriaLabel={calendarAriaLabel} clearAriaLabel={clearAriaLabel} className='date-picker'/>
     </>
 )
 
