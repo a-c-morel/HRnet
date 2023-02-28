@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Select from "react-select"
 
-const SelectCustom = ({ defaultValue, name, options, onChange, styles }) => (
+const SelectCustom = ({ defaultValue, name, options, onChange, styles, ariaLabelledBy }) => (
     <Select
         className="basic-single"
         classNamePrefix="select"
@@ -23,6 +23,7 @@ const SelectCustom = ({ defaultValue, name, options, onChange, styles }) => (
                 primary: 'black',
             },
         })}
+        aria-labelledby={ariaLabelledBy}
     />
 )
 
